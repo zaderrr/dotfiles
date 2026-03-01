@@ -10,8 +10,10 @@ cp -r ~/.config/rofi ~/dotfiles/.config
 cp -r ~/.oh-my-zsh/themes/minimalZSH.zsh-theme ~/dotfiles
 cd ~/dotfiles
 
+read -p "Commit message > " commitMsg
+
 git add .
-git commit -m $1
+git commit -m "$commitMsg"
 git push origin master
 
 rm -rf ~/dotfiles/.config
