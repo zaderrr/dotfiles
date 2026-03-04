@@ -6,7 +6,7 @@
 
     background-color:   transparent;
     text-color:         @fg0;
-    border-radius: 24px;
+    border-radius: 0px;
     margin:     0px;
     padding:    0px;
     spacing:    0px;
@@ -16,31 +16,34 @@ window {
     location:       north;
     y-offset:       calc(50% - 176px);
     width:          700;
-    border-radius:  24px;
 
-    background-color:   @bg0;
+    background-color:   #1a1a1aee;
+    border: 2px;
+    border-color: white;
 }
 
 mainbox {
     padding:    12px;
+    children: [listview, inputbar];
 }
 
-inputbar {
-    background-color:   @bg1;
-    border-color:       @bg3;
-    color: @bg3;
-
-    border:         2px;
-    border-radius:  16px;
-
-    padding:    8px 16px;
-    spacing:    8px;
-    children:   [ prompt, entry ];
-}
 
 prompt {
     text-color: @fg2;
 }
+
+inputbar {
+    background-color:   #1a1a1aee;
+    border-color:       #ffffff;
+    color: @bg3;
+
+    border:         2px;
+
+    padding:    16px 16px;
+    spacing:    8px;
+    children:   [ entry ];
+}
+
 
 entry {
     placeholder:        "";
@@ -55,15 +58,16 @@ message {
 }
 
 textbox {
-    padding:    8px 24px;
+    padding:    8px 12px;
 }
 
 
 
 listview {
     background-color:   transparent;
-
-    margin:     12px 0 0;
+    border: 2px 2px 0px 2px;
+    border-color: #ffffff;
+    margin:     0 0 0;
     lines:      8;
     columns:    1;
 
@@ -73,19 +77,19 @@ listview {
 element {
     padding:        8px 16px;
     spacing:        8px;
-    border-radius:  16px;
 }
 
 element normal active {
-    text-color: @bg3;
+    text-color: #ffffff;
 }
 
 element alternate active {
-    text-color: @bg3;
+    text-color: #ffffff;
 }
 
 element selected normal, element selected active {
-    background-color:   @bg3;
+    background-color:   #ffffff;
+    text-color: #1a1a1a;
 }
 
 element-icon {

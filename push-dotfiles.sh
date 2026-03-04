@@ -2,6 +2,7 @@
 
 mkdir ~/dotfiles/.config
 cp -r ~/.config/hypr ~/dotfiles/.config
+cp -r ~/.config/zellij ~/dotfiles/.config
 cp -r ~/.config/nvim ~/dotfiles/.config
 cp -r ~/.config/waybar ~/dotfiles/.config
 cp -r ~/.config/dunst ~/dotfiles/.config
