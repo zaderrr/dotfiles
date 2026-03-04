@@ -11,9 +11,17 @@ cp -r ~/.config/rofi ~/dotfiles/.config
 cp -r ~/.oh-my-zsh/themes/minimalZSH.zsh-theme ~/dotfiles
 cd ~/dotfiles
 
-read -p "Commit message > " commitMsg
+git add . 
+git status
 
-git add .
+read -p "Happy to commit? > " confirmCommit
+if [[ "$confirmCommit" == "y" ]]; then
+    read -p "Commit message > " commitMsg
+    
+    git commit -m "$commitMsg"
+    git push origin master
+fi
+
 git commit -m "$commitMsg"
 git push origin master
 
