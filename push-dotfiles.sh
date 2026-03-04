@@ -22,8 +22,6 @@ if [[ "$confirmCommit" == "y" ]]; then
     git push origin master
 fi
 
-git commit -m "$commitMsg"
-git push origin master
 
 rm -rf ~/dotfiles/.config
 rm -rf .zshrc
