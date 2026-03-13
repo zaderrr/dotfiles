@@ -6,7 +6,6 @@
 
     background-color:   transparent;
     text-color:         @fg0;
-    border-radius: 0px;
     margin:     0px;
     padding:    0px;
     spacing:    0px;
@@ -16,8 +15,8 @@ window {
     location:       north;
     y-offset:       calc(50% - 176px);
     width:          700;
-
-    background-color:   #1a1a1aee;
+    border-radius: 10px;
+    background-color:   #0a0a0aaa;
     border: 2px;
     border-color: white;
 }
@@ -33,7 +32,7 @@ prompt {
 }
 
 inputbar {
-    background-color:   #1a1a1aee;
+    background-color:   #0a0a0aaa;
     border-color:       #ffffff;
     color: @bg3;
 
@@ -89,7 +88,7 @@ element alternate active {
 
 element selected normal, element selected active {
     background-color:   #ffffff;
-    text-color: #1a1a1a;
+    text-color: @bg1;
 }
 
 element-icon {

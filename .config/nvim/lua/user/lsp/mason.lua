@@ -7,6 +7,7 @@ local servers = {
     "csharp_ls",
     "xmlformatter", -- "bashls",
     "jsonls",
+    "eslint"
     -- "yamlls",
 }
 

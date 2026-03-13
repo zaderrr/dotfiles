@@ -150,6 +150,7 @@ keybinds clear-defaults=true {
         bind "Alt i" { MoveTab "left"; }
         bind "Alt n" { NewPane; }
         bind "Alt t" {NewPane;}
+        bind "Ctrl f" {ToggleFocusFullscreen; }
         bind "Alt Ctrl t" {NewTab;}
         bind "Ctrl ]" {GoToNextTab;}
         bind "Ctrl [" {GoToPreviousTab;}
