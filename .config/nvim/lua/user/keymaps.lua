@@ -1,27 +1,27 @@
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
+local builtin = require('telescope.builtin')
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-local builtin = require('telescope.builtin')
+-- FILES --
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
-keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+vim.keymap.set("n", "<leader>df", ":Gitsigns diffthis ")
+-- GIT --
 keymap("n", "<leader>gs", ":Telescope git_status<CR>", opts)
---vim.keymap.set("n", "<C-d>", function()
---vim.cmd("tab split")
--- vim.lsp.buf.declaration()
---end, { desc = "Go to definition (new tab)" })
-
+keymap("n", "<leader>fg", ":LazyGit<CR>", opts)
+keymap('n', 'gd', ":VGit buffer_diff_preview<CR>", opts)
+keymap('n', 'gh', ":VGit buffer_hunk_preview<CR>", opts)
+-- LSP --
+vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end)
 vim.keymap.set("n", "<C-d>", function()
     local params = vim.lsp.util.make_position_params()
 
@@ -76,7 +76,24 @@ end, { desc = "Go to definition (reuse tab if exists)" })
 
 
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and client.server_capabilities.signatureHelpProvider then
+            vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { buffer = args.buf })
+        end
+    end,
+})
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and client.server_capabilities.signatureHelpProvider then
+            vim.keymap.set('i', '(', '(<cmd>lua vim.lsp.buf.signature_help()<CR>', { buffer = args.buf })
+            vim.keymap.set('i', ',', ',<cmd>lua vim.lsp.buf.signature_help()<CR>', { buffer = args.buf })
+        end
+    end,
+})
 
 
 vim.keymap.set("n", "<leader>nf", function()

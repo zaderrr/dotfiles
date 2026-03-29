@@ -10,6 +10,9 @@ require("conform").setup({
         python = { "pyright" },
         -- You can customize some of the format options for the filetype (:help conform.format)
         -- Conform will run the first available formatter
-        javascript = { "eslint_d", stop_after_first = true },
+        javascript = { lsp_format = "prefer" },
+        javascriptreact = { lsp_format = "prefer" },
+        typescript = { lsp_format = "prefer" },
+        typescriptreact = { lsp_format = "prefer" },
     },
 })

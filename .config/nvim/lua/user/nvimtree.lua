@@ -1,9 +1,15 @@
 require("nvim-tree").setup({
-    hijack_cursor = false,
     renderer = {
-        indent_markers = {
-            enable = true,
+        icons = {
+            show = {
+                folder = true,
+                file = true,
+                folder_arrow = false,
+            },
         },
     },
-    view = { width = 30 }
 })
+
+local opts = { noremap = true, silent = true }
+local api = require("nvim-tree.api")
+vim.keymap.set("n", "t", api.node.open.tab, opts)

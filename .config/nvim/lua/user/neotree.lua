@@ -39,7 +39,7 @@ require('neo-tree').setup({
             -- then these will never be used.
             default = "*",
             highlight = "NeoTreeFileIcon",
-            use_filtered_colors = true, -- Whether to use a different highlight when the file is filtered (hidden, dotfile, etc.).
+            use_filtered_colors = false, -- Whether to use a different highlight when the file is filtered (hidden, dotfile, etc.).
         },
         git_status = {
             symbols = {

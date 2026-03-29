@@ -53,17 +53,29 @@ return packer.startup(function(use)
         }
     })
     use "mfussenegger/nvim-jdtls"
-    use "nvim-lua/popup.nvim"   -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    use "neovim/nvim-lspconfig" -- enable LSP
+    use "nvim-lua/popup.nvim"              -- An implementation of the Popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim"            -- Useful lua functions used ny lots of plugins
+    use "neovim/nvim-lspconfig"            -- enable LSP
     use "nvim-telescope/telescope.nvim"
+    use { '~/Documents/Projects/ask.nvim', -- local path instead of 'user/repo'
+        config = function()
+            require('ask').setup()
+        end
+    }
     use "nvim-tree/nvim-web-devicons"
     use 'nvim-telescope/telescope-media-files.nvim'
     use "williamboman/mason.nvim"           -- simple to use language server installer
     use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
     use 'jose-elias-alvarez/null-ls.nvim'   -- LSP diagnostics and code actions
     use "nvim-java/nvim-java"
+    use({
+        "kdheepak/lazygit.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
     use "lunarvim/Onedarker.nvim"
+    use "tanvirtin/vgit.nvim"
     use "apyra/nvim-unity-sync"
     use {
         "nvim-treesitter/nvim-treesitter",
@@ -83,6 +95,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path"         -- path completions
     use "hrsh7th/cmp-cmdline"      -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "lewis6991/gitsigns.nvim"
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",

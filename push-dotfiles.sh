@@ -9,6 +9,7 @@ cp -r ~/.config/dunst ~/dotfiles/.config
 cp -r ~/.zshrc ~/dotfiles
 cp -r ~/.config/rofi ~/dotfiles/.config
 cp -r ~/.oh-my-zsh/themes/minimalZSH.zsh-theme ~/dotfiles
+cp -r ~/.tmux.conf ~/dotfiles
 cd ~/dotfiles
 
 git add . 

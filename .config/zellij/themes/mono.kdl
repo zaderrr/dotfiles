@@ -1,9 +1,9 @@
 themes {
     mono {
         text_unselected {
-            base 255 255 255
-            background 0 0 0
-            emphasis_0 255 255 255
+            base 255 255 255 
+            background 0
+            emphasis_0 255 255 255  
             emphasis_1 139 233 253
             emphasis_2 255 255 255
             emphasis_3 255 121 198

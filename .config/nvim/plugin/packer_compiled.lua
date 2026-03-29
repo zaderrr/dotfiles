@@ -84,6 +84,12 @@ _G.packer_plugins = {
     path = "/home/e/.local/share/nvim/site/pack/packer/start/Onedarker.nvim",
     url = "https://github.com/lunarvim/Onedarker.nvim"
   },
+  ["ask.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bask\frequire\0" },
+    loaded = true,
+    path = "/home/e/.local/share/nvim/site/pack/packer/start/ask.nvim",
+    url = "/home/e/Documents/Projects/ask.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/e/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -129,10 +135,20 @@ _G.packer_plugins = {
     path = "/home/e/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/e/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/e/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/e/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -248,10 +264,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/e/.local/share/nvim/site/pack/packer/start/transparent.nvim",
     url = "https://github.com/xiyaowong/transparent.nvim"
+  },
+  ["vgit.nvim"] = {
+    loaded = true,
+    path = "/home/e/.local/share/nvim/site/pack/packer/start/vgit.nvim",
+    url = "https://github.com/tanvirtin/vgit.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: ask.nvim
+time([[Config for ask.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bask\frequire\0", "config", "ask.nvim")
+time([[Config for ask.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
