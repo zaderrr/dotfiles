@@ -1,13 +1,16 @@
 require("nvim-tree").setup({
-    renderer = {
-        icons = {
-            show = {
-                folder = true,
-                file = true,
-                folder_arrow = false,
-            },
-        },
+  renderer = {
+    icons = {
+      show = {
+        folder = true,
+        file = true,
+        folder_arrow = false,
+      },
     },
+  },
+  git = {
+    ignore = false
+  }
 })
 
 local opts = { noremap = true, silent = true }
